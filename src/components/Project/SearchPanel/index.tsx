@@ -1,3 +1,4 @@
+import { Form, Input, Select } from 'antd';
 import * as React from 'react';
 
 interface ISearchPanelProps {
@@ -8,26 +9,27 @@ interface ISearchPanelProps {
     setParam:(param:ISearchPanelProps["param"])=>void,
     users:any
 }
-
+const {Option} = Select
 const SearchPanel: React.FunctionComponent<ISearchPanelProps> = (props) => {
     const {param,setParam,users} = props
 
   return(
       <>
-          <form>
-              <input type={"text"} value={param.name} 
-                                   onChange={e=>{setParam({...param,name:e.target.value})}}/>
-              <select value={param.personId}
-                      onChange={e=>{setParam({...param,personId:e.target.value})}}   
+          <Form layout='inline'>
+              <Input type={"text"} 
+                     value={param.name} 
+                     onChange={e=>{setParam({...param,name:e.target.value})}}/>
+              <Select value={param.personId}
+                      onChange={value=>{setParam({...param,personId:value})}}   
               >
-                  <option value="">负责人</option>
+                  <Option value="">负责人</Option>
                   {
                       users.map( (user :any) => {
-                          return <option value={user.id} key={user.id}>{user.name}</option>
+                          return <Option value={user.id} key={user.id}>{user.name}</Option>
                       })
                   }
-              </select>
-          </form>
+              </Select>
+          </Form>
       </>
   )
 };
