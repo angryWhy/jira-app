@@ -21,14 +21,17 @@ const Login: React.FunctionComponent<ILoginProps> = (props) => {
                 user ? <div>{user.name}</div> : null
             }
         </div>
-        <Form onFinish={handleSubmit}>
+        <Form onFinish={handleSubmit} 
+              layout='horizontal' 
+              labelCol={{ span: 6 }}
+              wrapperCol={{ span: 16 }}>
             <Form.Item label="用户名" name={"username"} rules={[{ required: true, message: "用户名未输入" }]}>
                 <Input type="text" id='username' placeholder='输入用户名' />
             </Form.Item>
             <Form.Item label="密码" name={"password"} rules={[{ required: true, message: "密码未输入" }]}>
                 <Input type="password" id='password' placeholder='输入密码' />
             </Form.Item>
-            <Form.Item>
+            <Form.Item wrapperCol={{offset: 6,span: 2}}>
                 <Button type='primary' htmlType='submit'>登录</Button>
             </Form.Item>
         </Form>
