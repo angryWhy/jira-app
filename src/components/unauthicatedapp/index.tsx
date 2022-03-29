@@ -13,24 +13,20 @@ interface IUnauthAppProps {
 }
 
 const UnauthApp: React.FunctionComponent<IUnauthAppProps> = (props) => {
-    const style = {
-        display:"flex",
-        alignItems:"center",
-        justifyContent:"center"
-    }
     const [isRegister, setIsRegister] = useState(true)
     return (
+        <div>
         <Container >
-            <Header/>
-            <BackGround/>
+            <Header />
+            <BackGround />
             <ShadowCard>
-                {
-                    isRegister ? <Login /> : <ProjectList />
-                }
+            {
+                isRegister ? <Login /> : <ProjectList /> 
+            }
                 <Button onClick={e => { setIsRegister(!isRegister) }}>进入ProjectList</Button>
             </ShadowCard>
-            
         </Container>
+        </div>
     )
 };
 
