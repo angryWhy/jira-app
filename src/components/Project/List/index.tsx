@@ -5,11 +5,12 @@ import { Project, User } from '../../../types/projectType';
 
 interface IListProps {
   list: Project[],
-  users: User[]
+  users: User[],
+  loading:boolean
 }
 
 const List: React.FunctionComponent<IListProps> = (props) => {
-  const { list, users } = props
+  const { list, users,loading } = props
   console.log(list);
   return (<Table columns={[
     {
@@ -40,7 +41,7 @@ const List: React.FunctionComponent<IListProps> = (props) => {
       }
     }
 
-  ]} dataSource={list} pagination={false} />)
+  ]} dataSource={list} pagination={false} loading={loading} />)
   // return (
   //   <div>
   //     <table>
