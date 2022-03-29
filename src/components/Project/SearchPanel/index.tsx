@@ -14,11 +14,14 @@ const SearchPanel: React.FunctionComponent<ISearchPanelProps> = (props) => {
     const {param,setParam,users} = props
 
   return(
-      <>
-          <Form layout='inline'>
+     
+          <Form layout='inline' >
+              <Form.Item name={""}>
               <Input type={"text"} 
                      value={param.name} 
                      onChange={e=>{setParam({...param,name:e.target.value})}}/>
+              </Form.Item>
+              <Form.Item>
               <Select value={param.personId}
                       onChange={value=>{setParam({...param,personId:value})}}   
               >
@@ -29,8 +32,8 @@ const SearchPanel: React.FunctionComponent<ISearchPanelProps> = (props) => {
                       })
                   }
               </Select>
+              </Form.Item>
           </Form>
-      </>
   )
 };
 

@@ -11,5 +11,6 @@ export type Project = {
     name:string,
     personId:string,
     pin:boolean,
-    organization:string
+    organization:string,
+    created:number
 }
