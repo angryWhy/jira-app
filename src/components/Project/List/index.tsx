@@ -1,6 +1,7 @@
 import { Table } from 'antd';
 import dayjs from 'dayjs';
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import { Project, User } from '../../../types/projectType';
 
 interface IListProps {
@@ -16,7 +17,10 @@ const List: React.FunctionComponent<IListProps> = (props) => {
     {
       title: "名称",
       dataIndex: "name",
-      sorter:(a,b)=>a.name.localeCompare(b.name)
+      sorter:(a,b)=>a.name.localeCompare(b.name),
+      render(value,project){
+        return<Link to={`${project.id}`}>{project.name}</Link>
+      }
     },
     {
       title:"部门",
