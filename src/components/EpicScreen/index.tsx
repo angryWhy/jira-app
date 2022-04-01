@@ -6,7 +6,7 @@ interface IEpicScreenProps {
 const EpicScreen: React.FunctionComponent<IEpicScreenProps> = (props) => {
   return(
       <div>
-          
+          EpicScreen
       </div>
   )
 };

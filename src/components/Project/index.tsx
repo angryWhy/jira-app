@@ -1,13 +1,10 @@
 import * as React from 'react';
-import { useEffect, useState } from 'react';
+import {  useState } from 'react';
 import List from './List/index';
 import SearchPanel from './SearchPanel';
-import { cleanObejct } from '../../utils/cleanObejct';
-import { useMount } from '../../utils/useMount';
+
 import { useDebounce } from '../../utils/useDebounce';
-import { useHttp } from '../../utils/useHttp';
-import { useAsync } from '../../utils/useAsync';
-import { Project } from '../../types/projectType';
+
 import { useProject } from '../../utils/useProject';
 import { useUser } from '../../utils/useUser';
 import { useDocument } from '../../utils/useDocument';

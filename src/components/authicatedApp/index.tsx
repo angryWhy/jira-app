@@ -12,7 +12,7 @@ interface IAuthicatedProps {
 const Authicated: React.FunctionComponent<IAuthicatedProps> = (props) => {
   return (<Container>
     <PageHeader />
-    <ProjectList />
+    {/* <ProjectList /> */}
     <Routes>
       <Route path="/projects" element={<ProjectList/>}/>
       <Route path="/projects/:projectId/*" element={<ProjectScreen/>}/>
